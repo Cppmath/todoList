@@ -60,6 +60,10 @@ const actions = {
 
     clearCompleted(state){
         state.todos = state.todos.filter(todo => todo.completed === false)
+        if(state.todos[0]){
+            state.todos.forEach((todo,index) => todo.id = index)
+        }
+        storage.set(state.todos)
     },
 
     startEdit: (state, id) => {
