@@ -22,7 +22,7 @@ function TodoItem({ todo , editIndex}) {
             value="${todo.title}"
             onkeyup = "event.keyCode === 13 && dispatch('endEdit', this.value.trim(), ${todo.id}) || 
                 event.keyCode === 27 && dispatch('cancleEdit')"
-            onblur = "event.keyCode === 13 || dispatch('endEdit', this.value.trim(), ${todo.id})"
+            onblur = "event.keyCode === 27 || dispatch('endEdit', this.value.trim(), ${todo.id})"
         >
     </li>
     `
